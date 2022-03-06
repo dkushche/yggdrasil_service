@@ -1,0 +1,8 @@
+*
+
+!.gitignore
+!.dockerignore
+
+!configurator.py
+!Dockerfile
+!entrypoint.sh
