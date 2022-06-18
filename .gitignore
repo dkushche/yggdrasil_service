@@ -6,3 +6,5 @@
 !configurator.py
 !Dockerfile
 !entrypoint.sh
+
+!Jenkinsfile
