@@ -5,7 +5,7 @@ pipeline {
         stage("Prepare Image") {
             steps {
                 script {
-                    docker.withRegistry('https://registry.roothazardlab.com', 'roothazardlab-registry') {
+                    docker.withRegistry('https://registry.roothazardlab.com:443', 'roothazardlab-registry') {
                         def yggdrasilGatewayImage = docker.build("yggdrasil_gateway_image:${env.BUILD_ID}")
 
                         yggdrasilGatewayImage.push()
