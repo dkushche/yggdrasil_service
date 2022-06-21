@@ -1,7 +1,11 @@
 *
 
 !.gitignore
+!.gitattributes
 !.dockerignore
+
+!.roothazardlab
+!.roothazardlab/*
 
 !configurator.py
 !Dockerfile

@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: yggdrasil
+  namespace: yggdrasil
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: yggdrasil
+  template:
+    metadata:
+      labels:
+        app: yggdrasil
+    spec:
+      containers:
+      - name: yggdrasil
+        image: yggdrasil_gateway_image:latest
+        securityContext:
+          capabilities:
+            add: ["DAC_OVERRIDE", "NET_ADMIN"]
+          sysctls:
+          - name: net.ipv6.conf.all.disable_ipv6
+            value: "0"
+        volumeMounts:
+        - name: config
+          mountPath: /mnt/storage
+        - name: tun
+          mountPath: /dev/net/tun
+      volumes:
+      - name: yggdrasil
+        secret:
+          secretName: yggdrasil-conf-secret
+      - name: tun
+        hostPath:
+          path: /dev/net/tun
