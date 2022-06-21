@@ -24,4 +24,7 @@ COPY --from=builder /tmp/dumb-init    /usr/bin/
 
 COPY . .
 
+ARG FORWARD_TO="None"
+ENV FORWARD_TO=${FORWARD_TO}
+
 ENTRYPOINT /entrypoint.sh
