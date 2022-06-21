@@ -24,7 +24,7 @@ COPY --from=builder /tmp/dumb-init    /usr/bin/
 
 COPY . .
 
-ARG FORWARD_TO="None"
-ENV FORWARD_TO=${FORWARD_TO}
+ARG LOADBALANCER_IP="None"
+ENV LOADBALANCER_IP=${LOADBALANCER_IP}
 
 ENTRYPOINT /entrypoint.sh

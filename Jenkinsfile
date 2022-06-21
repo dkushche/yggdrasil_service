@@ -10,7 +10,7 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry('https://registry.roothazardlab.com:443', 'roothazardlab-registry') {
-                        docker.build("yggdrasil_gateway_image:latest", "--build-arg FORWARD_TO='${params.LOADBALANCER_IP}'").push()
+                        docker.build("yggdrasil_gateway_image:latest", "--build-arg LOADBALANCER_IP='${params.LOADBALANCER_IP}' .").push()
                     }
                 }
             }
