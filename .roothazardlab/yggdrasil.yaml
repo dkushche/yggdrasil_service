@@ -29,7 +29,7 @@ spec:
         - name: tun
           mountPath: /dev/net/tun
       volumes:
-      - name: yggdrasil
+      - name: config
         secret:
           secretName: yggdrasil-conf-secret
       - name: tun
