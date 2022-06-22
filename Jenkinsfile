@@ -11,12 +11,6 @@ pipeline {
                 script {
                     sh "apt update"
                     sh "apt install -y git-crypt apt-transport-https ca-certificates curl"
-
-                    sh "curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg"
-                    sh "echo \"deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main\" | tee /etc/apt/sources.list.d/kubernetes.list"
-
-                    sh "apt update"
-                    sh "apt install -y kubectl"
                 }
             }
         }
