@@ -10,7 +10,7 @@ pipeline {
             steps {
                 script {
                     sh "apt update"
-                    sh "apt install -y git-crypt apt-transport-https ca-certificates curl"
+                    sh "apt install -y git-crypt"
                 }
             }
         }
