@@ -15,7 +15,10 @@ spec:
     spec:
       containers:
       - name: yggdrasil
-        image: registry.roothazardlab.com/yggdrasil_gateway_image:latest
+        image:
+          registry: registry.roothazardlab.com
+          image: yggdrasil_gateway_image
+          tag: "latest"
         securityContext:
           capabilities:
             add: ["DAC_OVERRIDE", "NET_ADMIN"]
