@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: yggdrasil
-  namespace: yggdrasil
+  namespace: projects
 spec:
   replicas: 1
   selector:
@@ -13,6 +13,8 @@ spec:
       labels:
         app: yggdrasil
     spec:
+      imagePullSecrets:
+      - name: registry-pull-secret
       containers:
       - name: yggdrasil
         image: registry.roothazardlab.com/yggdrasil_gateway_image:latest
