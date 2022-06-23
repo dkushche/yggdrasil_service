@@ -3,6 +3,7 @@ pipeline {
 
     parameters {
         string(name: 'LOADBALANCER_IP', defaultValue: 'None', description: 'Where redirect traffic from yggdrasil?')
+        booleanParam(name: 'DEPLOY', defaultValue: false, description: 'Do you want to deploy it in the lab?')
     }
 
     stages {
@@ -36,9 +37,12 @@ pipeline {
         }
 
         stage("Deploy in Lab") {
+            when {
+                expression { return params.DEPLOY }
+            }
+
             steps {
                 script {
-                    sh "kubectl apply -f .roothazardlab/namespace.yaml"
                     sh "kubectl apply -f .roothazardlab/yggdrasil-conf-secret.yaml"
                     sh "kubectl apply -f .roothazardlab/yggdrasil.yaml"
                 }
