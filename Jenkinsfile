@@ -45,6 +45,7 @@ pipeline {
                 script {
                     sh "kubectl apply -f .roothazardlab/yggdrasil-conf-secret.yaml"
                     sh "kubectl apply -f .roothazardlab/yggdrasil.yaml"
+                    sh "kubectl rollout restart deployment/yggdrasil -n projects"
                 }
             }
         }
