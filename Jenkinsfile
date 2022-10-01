@@ -7,15 +7,6 @@ pipeline {
     }
 
     stages {
-        stage("Install dependencies") {
-            steps {
-                script {
-                    sh "apt update"
-                    sh "apt install -y git-crypt"
-                }
-            }
-        }
-
         stage("Prepare Image") {
             steps {
                 script {
