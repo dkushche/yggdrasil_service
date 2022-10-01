@@ -1,7 +1,8 @@
 # Yggdrasil Service Image
 
-[Yggdrasil Network](https://github.com/yggdrasil-network/yggdrasil-go) docker image. Container reads and stores configs and logs in `/mnt/storage` directory. You could manipulate these files if mount the directory on the host.
-Docker compose example:
+[Yggdrasil Network](https://github.com/yggdrasil-network/yggdrasil-go) docker image. Container reads and stores configs in `/mnt/storage` directory. You could manipulate these files if mount the directory on the host.
+
+_Docker compose entry example:_
 
 ```yml
 yggdrasil:
