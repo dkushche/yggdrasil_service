@@ -1,5 +1,8 @@
 *
 
+!.github
+!.github/**
+
 !.gitignore
 !.gitattributes
 !.dockerignore
@@ -12,3 +15,5 @@
 !entrypoint.sh
 
 !Jenkinsfile
+
+!README.md
