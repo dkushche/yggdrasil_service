@@ -1,6 +1,6 @@
 # Yggdrasil Service Image
 
-[Yggdrasil Network](https://github.com/yggdrasil-network/yggdrasil-go) docker image. Container reads and stores configs in `/mnt/storage` directory. You could manipulate these files if mount the directory on the host.
+[Yggdrasil Network](https://github.com/yggdrasil-network/yggdrasil-go) docker image. Container reads and stores configs in `/mnt/storage` directory. You could manipulate these files if mount the directory on the host. __Important__: [Peers list](https://github.com/yggdrasil-network/public-peers) help you to create `peers.json`. An example of peers.json for Ukrainian peers you could see in `.roothazardlab/yggdrasil-peers-conf.yaml`.
 
 _Docker compose entry example:_
 

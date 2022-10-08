@@ -24,12 +24,17 @@ spec:
         volumeMounts:
         - name: config
           mountPath: /mnt/storage
+        - name: peers-config
+          mountPath: /mnt/storage
         - name: tun
           mountPath: /dev/net/tun
       volumes:
       - name: config
         secret:
           secretName: yggdrasil-conf-secret
+      - name: peers-config
+        configMap:
+          name: yggdrasil-peers-conf
       - name: tun
         hostPath:
           path: /dev/net/tun

@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: yggdrasil-peers-conf
+  namespace: projects
+data:
+  peers.json: |
+    {
+        "peers" : [
+            "tcp://193.111.114.28:8080",
+            "tcp://78.27.153.163:33165",
+            "tls://193.111.114.28:1443",
+            "tls://78.27.153.163:33166",
+            "tls://91.224.254.114:18001"
+        ]
+    }
